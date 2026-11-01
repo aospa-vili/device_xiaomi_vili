@@ -6,11 +6,10 @@
 # Inherit from vili device
 $(call inherit-product, device/xiaomi/vili/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common custom stuff.
+$(call inherit-product, vendor/custom/config/common_full_phone.mk)
 
 # DerpFest Flags
-DERPFEST_BUILD_TYPE := Official
 WITH_GMS := true
 
 # Extras
@@ -25,7 +24,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := vili
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := 2107113SG
-PRODUCT_NAME := lineage_vili
+PRODUCT_NAME := custom_vili
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="vili_global-user 14 UKQ1.231207.002 V816.0.22.0.UKDMIXM release-keys" \
