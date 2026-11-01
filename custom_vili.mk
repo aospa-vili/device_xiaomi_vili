@@ -11,6 +11,7 @@ $(call inherit-product, vendor/custom/config/common_full_phone.mk)
 
 # DerpFest Flags
 WITH_GMS := true
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
 
 # Extras
 TARGET_FACE_UNLOCK_SUPPORTED := true
