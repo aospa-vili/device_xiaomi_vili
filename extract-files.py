@@ -35,6 +35,16 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/etc/audio/sku_lahaina/mixer_paths.xml': blob_fixup()
+        .regex_replace(
+            r'(<path name="ultrasound-proximity-input ultrasund-tx">\s*</path>)',
+            r'\1\n\n    <path name="ultrasound-proximity-output ultrasund-rx">\n        <path name="ultrasound-proximity-output" />\n    </path>',
+        ),
+    'vendor/etc/audio/sku_lahaina/mixer_paths_overlay_static.xml': blob_fixup()
+        .regex_replace(
+            r'(<path name="ultrasound-proximity-output handset">[\s\S]*?</path>)',
+            r'\1\n\n    <path name="ultrasound-proximity-output ultrasund-rx">\n        <ctl name="RX_MACRO RX2 MUX" value="AIF2_PB" />\n        <ctl name="RX INT0_2 MUX" value="RX2" />\n    </path>',
+        ),
     'vendor/etc/camera/pureShot_parameter.xml': blob_fixup()
         .regex_replace(r'=(\d+)>', r'="\1">'),
     'vendor/etc/libnfc-nxp.conf': blob_fixup()
