@@ -45,3 +45,7 @@ $(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/vili/vili-vendor.mk)
+
+# Enable UVC support
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.usb.uvc.enabled=true 
