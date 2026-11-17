@@ -43,7 +43,7 @@ BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(BOOT_KERNEL_MODULES)
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 
 # Properties
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
 
 # Include proprietary files
 include vendor/xiaomi/vili/BoardConfigVendor.mk
